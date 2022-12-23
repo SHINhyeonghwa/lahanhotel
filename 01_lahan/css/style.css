@@ -1,0 +1,933 @@
+/* RESET */
+*{margin: 0; padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {text-decoration: inherit; color: inherit;}
+li {list-style: none;}
+img {vertical-align: middle;}
+a img {border: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR:wght@300;700&family=Unna&display=swap');
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color:#000;
+    line-height: 1.4;
+}
+.en{
+    font-family: 'Unna', serif;
+}
+.en_1{
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* HEADER */
+header{
+    width: 100%;
+    padding:0 40px;
+    box-sizing: border-box;
+    height: 100px;
+    line-height: 100px;
+    color:#fff;
+    z-index:100;
+    position: fixed;
+    top:0;
+    transition: 0.5s;
+}
+
+.menuopen{
+    display: inline-block;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 16px;
+    line-height: 100;
+}
+.menuopen span{
+    display: block;
+    width: 80%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.menuopen span.mid{
+    top:50%;
+}
+.menuopen span.bot{
+    top:100%;
+}
+.book{
+    display: inline-block;
+    float: left;
+    margin-left: 70px;
+    height: 100%;
+    font-size: 20px;
+}
+.lang{
+    float: left;
+    margin-left: 220px;
+    overflow: hidden;
+    width: 150px;
+}
+.lang li{
+    float: left;
+    width: 50%;
+}
+.lang li:first-child{
+    font-weight: bold;
+}
+.lang li:last-child{
+    color:#ddd;
+}
+.lang li a{
+    display: block;
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
+.right{
+    float: right;
+}
+.right li{
+    float: left;
+    margin-right: 50px;
+}
+.right li:last-child{
+    margin-right: 0;
+}
+.right li p{
+    letter-spacing: 1px;
+}
+.right .logo{
+    width: 150px;
+    height: 100px;
+}
+.right .logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.right .logo a img{
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.right .logo a img:last-child{
+    opacity: 0;
+}
+
+/* Banner */
+.banner{
+    color:#fff;
+}
+.banner .slide li{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.banner .slide li.slick-active img{
+    position: absolute;
+    right:0;
+    top:0;
+    width: 100%;
+    animation:scale 4.5s;
+}
+@keyframes scale{
+    0%{
+        transform: scale(1.1);
+    }
+}
+.banner .slide .maintxt{
+    position: absolute;
+    top:35%;
+    right:15%;
+    width:25%;
+}
+.banner .slide .slick-active .maintxt strong{
+    display: block;
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    animation:txt 3s;
+}
+@keyframes txt{
+    0%{
+        opacity: 0;
+    }
+}
+.banner .slide .slick-active .maintxt > p{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 70px;
+    animation:slideup 3s;
+}
+@keyframes slideup{
+    0%{opacity: 0;}
+    20%{opacity: 0;
+    transform: translateY(20px);}
+}
+.banner .slide .maintxt .num{
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.banner .slide .slick-active .maintxt .num span{
+    position: absolute;
+    display: inline-block;
+    opacity: 0;
+    animation:trans 4.5s infinite;
+}
+.banner .slide .maintxt .subtxt{
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+/* LOADING Banner */
+.banner .menu{
+    position: absolute;
+    left:5%;
+    bottom:10%;
+    font-size: 22px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.banner .menu:after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    left:0;
+    bottom:0;
+}
+.banner .menu li{
+    float: left;
+    padding-right:20px;
+}
+.banner .menu li:nth-child(2){
+    padding-right: 100px;
+}
+.banner .menu li:nth-child(3){
+    padding-right: 0px;
+}
+.banner .menu li span i{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.banner .menu li p{
+    font-size: 25px;
+}
+
+/* NUMBER ANIMATION */
+@keyframes trans{
+    0%{
+        opacity: 0;
+        transform:translateY(0px);
+    }
+    30%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    70%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 1;
+        transform:translateY(0px);
+    }
+}
+
+/* INTRODUCE */
+.introduce{
+    width: 88%;
+    margin:130px auto 0;
+    overflow: hidden;
+}
+.introduce .title{
+    font-size: 32px;
+    line-height: 1.5;
+    margin-bottom: 100px;
+}
+.introduce .roominfo{
+    width: 100%;
+    height: 880px;
+    position: relative;
+}
+.introduce .roominfo .tab{
+    width: 380px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+.introduce .roominfo .tab li{
+    float: left;
+    width: 40%;
+    margin-right: 3%;
+}
+.introduce .roominfo .tab li:last-child{
+    margin-right: 0;
+}
+.introduce .roominfo .tab li a{
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.introduce .roominfo .tab li.on{
+    color:#a68164;
+}
+.introduce .roominfo .tab li a span{
+    display: inline-block;
+    position: relative;
+    padding:5px 0px;
+    box-sizing: border-box;
+}
+.introduce .roominfo .tab li a span:after{
+    content:'';
+    position: absolute;
+    left:0;
+    bottom:0;
+    width: 0%;
+    height: 1px;
+    background-color: #a68164;
+    transition: 0.5s;
+}
+.introduce .roominfo .tab li a span:hover:after{
+    width: 100%;
+}
+.introduce .roominfo .tabbox{
+    width: 100%;
+    position: absolute;
+    left:0;
+    top: 11%;
+    display: none;
+}
+.introduce .roominfo .tabbox.on{
+    display: block;
+}
+.introduce .roominfo .tabbox .deluxe{
+    overflow: hidden;
+    width: 100%;
+}
+.introduce .roominfo .tabbox .deluxe .photo{
+    float: left;
+    width: 60%;
+    position: relative;
+}
+.introduce .roominfo .tabbox .deluxe .txtinfo{
+    float: right;
+    width: 40%;
+    text-align: center;
+    margin-top: 180px;
+}
+.introduce .roominfo .tabbox .deluxe .txtinfo .titbox{
+    margin-bottom: 120px;
+}
+.introduce .roominfo .tabbox .deluxe .txtinfo .titbox h3{
+    font-size: 35px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+.introduce .roominfo .tabbox .deluxe .txtinfo .titbox p{
+    font-size: 17px;
+    color:#604d3e;
+}
+.introduce .roominfo .tabbox .deluxe .txtinfo .inner li{
+    margin-bottom: 50px;
+}
+.introduce .roominfo .tabbox .deluxe .txtinfo .inner li span{
+    display: block;
+    margin-bottom: 20px;
+    color:#a68164;
+}
+.introduce .roominfo .tabbox .deluxe .txtinfo .inner li p{
+    font-size: 17px;
+}
+.introduce .roominfo .tabbox .deluxe .showbox{
+    width: 25%;
+    position: absolute;
+    left: 8%;
+    bottom: 18%;
+    color:#fff;
+    letter-spacing: 1.5px;
+}
+.introduce .roominfo .tabbox .deluxe .showbox .name{
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(235,235,235,0.33);
+    margin-bottom: 10px;
+    position: relative;
+}
+.introduce .roominfo .tabbox .deluxe .showbox .name:after{
+    content:'';
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    left:0;
+    bottom:0;
+    position: absolute;
+    animation:underbar 3s;
+}
+@keyframes underbar{
+    0%{width:0%;}
+    100%{width: 100%;}
+}
+.introduce .roominfo .tabbox .deluxe .showbox .btn{
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight:600;
+}
+.introduce .roominfo .tabbox .deluxe .photo img{
+    width: 100%;
+}
+
+@keyframes slide-up2{
+    0%{opacity: 0;}
+    20%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+.introduce .title.motion{
+    animation:slide-up2 1.5s;
+}
+.introduce .roominfo.motion{
+    animation:slide-up2 1.5s;
+}
+.introduce .roominfo.motion .tabbox .deluxe .txtinfo .titbox h3{
+    animation:slide-up2 1.5s;
+}
+.introduce .roominfo.motion .tabbox .deluxe .txtinfo .titbox p{
+    animation:slide-up2 1.8s;
+}
+.introduce .roominfo.motion .tabbox .deluxe .txtinfo .inner li{
+    animation:slide-up2 2s;
+}
+
+
+/* OFFER */
+.offer{
+    width: 88%;
+    margin:200px auto 100px;
+}
+.offer h2{
+    font-size: 30px;
+    line-height: 1.7;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.offer .find{
+    display: inline-block;
+    font-size: 15px;
+    color:#a68164;
+    margin-bottom: 35px;
+}
+.offer .find:hover{
+    font-weight: bold;
+}
+.offer .new{
+    width: 100%;
+    overflow: hidden;
+}
+.offer .new li{
+    margin-right:2%;
+    float: left;
+    width: 23.5%;
+    margin-right: 2%;
+}
+.offer .new li:last-child{
+    margin-right:0;
+}
+.offer .new li p.img{
+    width: 100%;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.offer .new li p.img a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.offer .new li p.img a img{
+    width: 100%;
+    transition: 0.5s;
+}
+.offer .new li p.img a:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.offer .new li span{
+    display: block;
+    margin-bottom:10px;
+}
+.offer .new li h3{
+    font-size: 20px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.offer .new li .hashtag{
+    font-size: 15px;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    height: 70px;
+}
+.offer .new li > a{
+    display: inline-block;
+    font-size: 15px;
+    color:#a68164;
+    position: relative;
+    padding-bottom:3px;
+}
+.offer .new li > a:after{
+    content:'';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: #a68164;
+    left:0;
+    bottom:0;
+    transition: 0.3s;
+}
+.offer .new li > a:hover:after{
+    width: 100%;
+}
+
+
+/* DINING BANNER */
+.dining{
+    width: 100%;
+    overflow: hidden;
+    background: #d7cdc5;
+    height: 1000px;
+}
+.dining .dining_slide{
+    float: left;
+    width: 50%;
+}
+.dining .dining_slide li{
+    width: 100%;
+    position: relative;
+}
+.dining .dining_slide li img{
+    width: 100%;
+}
+.dining .dining_slide .slide_txt{
+    position: absolute;
+    left: 8%;
+    bottom: 15%;
+    color:#fff;
+}
+.dining .dining_slide .slide_txt h3{
+    font-size: 35px;
+    font-weight: normal;
+    letter-spacing:3px;
+    margin-bottom: 30px;
+}
+.dining .dining_slide .slide_txt p{
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.dining .dining_slide a{
+    font-size: 20px;
+    background-color: #a68164;
+    width: 150px;
+    display: block;
+    padding:6px 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.dining .dining_slide a:after{
+    content:'';
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 0;
+    background-color: #604a3e;
+    transition: 0.3s;
+}
+.dining .dining_slide a:hover:after{
+    height: 100%;
+    z-index:-1;
+}
+.dining .dining_txt{
+    float: right;
+    width: 50%;
+    padding:80px 0 0 80px;
+    box-sizing: border-box;
+}
+.dining .dining_txt h3{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 600px;
+}
+.dining .dining_txt p{
+    font-size: 15px;
+    color:#a68164;
+    line-height: 1.6;
+}
+.dining .dining_slide .slick-active .slide_txt h3{
+    animation:slide-up2 1s; 
+}
+.dining .dining_slide .slick-active .slide_txt p{
+    animation:slide-up2 1.5s; 
+}
+.dining .dining_slide .slick-active .slide_txt a{
+    animation:slide-up2 2s; 
+}
+.dining .dining_txt.motion h3{
+    animation:slide-up2 2s;
+}
+
+/* WELCOME */
+.welcome{
+    width: 100%;
+    text-align: center;
+    margin:100px 0;
+}
+.welcome h2{
+    font-size: 17px;
+    font-weight: normal;
+    color:#a68164;
+    margin-bottom: 60px;
+}
+.welcome h3{
+    font-size: 32px;
+    line-height: 1.5;
+    font-weight:500;
+    margin-bottom: 50px;
+}
+.welcome a{
+    display: block;
+    width: 150px;
+    margin:auto;
+    text-align: center;
+    border:1px solid #a68164;
+    padding:12px 20px;
+    position: relative;
+    z-index:1;
+}
+.welcome a:after{
+    width: 0%;
+    height: 100%;
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #a68164;
+    transition: 0.3s;
+    z-index: -1;
+}
+.welcome a:hover:after{
+    width: 100%;
+}
+.welcome a:hover{
+    color:#fff;
+}
+
+/* NEWS */
+.news{
+    width: 100%;
+    border-top: 1px solid #d3cdb7;
+    overflow: hidden;
+}
+.news .title_wrap{
+    width: 7%;
+    height: 400px;
+    float: left;
+    border-right: 1px solid #e3dbd7;
+    box-sizing: border-box;
+    position: relative;
+}
+.news .title_wrap .inner{
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.news .notice_list{
+    width: 90%;
+    float: left;
+}
+.news .title_wrap .inner .news_title{
+    transform: rotate(-90deg);
+    width: 200px;
+}
+.news .title_wrap .inner .news_title a{
+    display: block;
+    color:#604d3e;
+    font-size: 16px;
+}
+.news .notice_list{
+    width: 90%;
+    float: left;
+    padding-top: 100px;
+    overflow: hidden;
+}
+.news .notice_list li{
+    float: left;
+    width: 33.3333%;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+.news .notice_list li .date{
+    display: block;
+    text-align:right;
+    font-size: 35px;
+}
+.news .notice_list li .textbox{
+    width: 80%;
+    float: right;
+}
+.news .notice_list li .textbox strong{
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    color:#1d212a;
+    margin-bottom: 50px;
+}
+.news .notice_list li .textbox .listtxt{
+    font-size: 14px;
+    color:#604d3e;
+    height: 115px;
+}
+.news .notice_list li .textbox .more{
+    display: block;
+    width: 80px;
+    font-size: 14px;
+    padding:5px 0;
+    position: relative;
+    margin-bottom: 50px;
+}
+.news .notice_list li .textbox .more:after{
+    content:'';
+    position: absolute;
+    left:0;
+    bottom:0;
+    width: 0;
+    height: 1px;
+    background-color: #a68164;
+    transition: 0.4s;
+}
+.news .notice_list li .textbox .more:hover:after{
+    width: 100%;
+}
+.news .notice_list.motion li{
+    animation:slide-up2 1.5s;
+}
+.news .notice_list.motion li:nth-child(2){
+    animation:slide-up2 1.9s;
+}
+.news .notice_list.motion li:nth-child(3){
+    animation:slide-up2 2.4s;
+}
+
+/* CLUB BANNER */
+.club_banner{
+    width: 100%;
+    background:url(../images/club.jpg)no-repeat center/cover;
+}
+.club_banner .inner{
+    width: 78%;
+    margin:auto;
+    padding:200px 0;
+    text-align: center;
+    color:#fff;
+}
+.club_banner .inner h3{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.club_banner .inner a{
+    display: block;
+    width: 85px;
+    background-color: #a68164;
+    margin: auto;
+    padding:10px 15px;
+    position: relative;
+    z-index: 1;
+}
+.club_banner .inner a:after{
+    position: absolute;
+    content:'';
+    left:0;
+    top:0;
+    width: 100%;
+    height: 0;
+    background-color: #705139;
+    transition: 0.3s;
+    z-index: -1;
+}
+.club_banner .inner a:hover:after{
+    height: 100%;
+}
+.club_banner .inner a:hover{
+    font-weight: bold;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    background-color: #161e27;
+}
+.footer_inner{
+    width: 87%;
+    margin:auto;
+    padding:80px 0;
+    color:#fff;
+    display: flex;
+}
+.footer_inner .logo{
+    margin-right: 50px;
+}
+.footer_inner .contact_area{
+    display: flex;
+}
+.footer_inner .contact_area li{
+    margin-right: 150px;
+}
+.footer_inner .footer_right .icon{
+    display: flex;
+}
+.footer_inner .footer_right .icon li{
+    margin-right: 30px;
+}
+
+
+.menuwrap span{
+    display: block;
+}
+.menuwrap span b{
+    font-weight: normal;
+}
+.menuwrap{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    background-color: #eee;
+    color:#000;
+    padding:160px 200px 0 450px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.menuwrap .close{
+    display: inline-block;
+    position: absolute;
+    top:5px;
+    left:40px;
+    font-size: 16px;
+}
+.menuwrap .close img{
+    margin-right: 20px;
+}
+.menuwrap .menuwrap_left{
+    float: left;
+    width: 50%;
+}
+.menuwrap .menuwrap_left .tit{
+    margin-bottom: 50px;
+}
+.menuwrap .menuwrap_left .tit li a{
+    font-size: 44px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+
+.menuwrap .menuwrap_right{
+    float: left;
+    width: 50%;
+}
+.menuwrap .menuwrap_right .fam_site{
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.menuwrap .menuwrap_right .fam_site li:first-child{
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.menuwrap .menuwrap_right .follow p{
+    font-size: 15px;
+    line-height: 2;
+}
+.menuwrap .menuwrap_right .follow a{
+    display: inline-block;
+    margin-right: 25px;
+    font-size: 24px;
+}
+/* TEXT ANIMATION */
+.menuwrap.on span{
+    overflow: hidden;
+}
+.menuwrap.on span b{
+    overflow: hidden;
+    display: block;
+    animation:textani 1.5s;
+}
+@keyframes textani{
+    0%{
+        opacity: 0;
+    }
+    40%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+.menuwrap{
+    width: 0;
+    transform: 0s;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+}
+.menuwrap.on{
+    width: 100%;
+    left:0;
+    transition: 0.5s;
+    opacity: 1;
+    padding:160px 200px 0 450px;
+}
+
+/* FIXED HEADER */
+header.on{
+    background:rgba(96,77,62,0.3);
+}
+
+
+
+
+
+
+
+
